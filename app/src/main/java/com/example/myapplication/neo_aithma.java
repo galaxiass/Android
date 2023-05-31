@@ -21,6 +21,8 @@ public class neo_aithma extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
     private Button timeButton;
+
+    private Button OKbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,18 @@ public class neo_aithma extends AppCompatActivity {
 
         //time picker
         timeButton = findViewById(R.id.timepickerButton);
+
+        //OK button
+        OKbutton = findViewById(R.id.OKbutton);
+
+        //na kanw to ok button na kataxwrei to aithma gia rantebou
+        OKbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ////////code
+            }
+        });
+
     }
 
 

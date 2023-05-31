@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">PhysioDate</string>
+    <string name="text_yphresia"> <u>Υπηρεσία: </u></string>
+    <string name="text_wra"> <u>Ώρα: </u></string>
+    <string name="text_hmeromhnia"> <u>Ημ/νία:</u></string>
+    <string name="text_aithma"> <u>Αίτημα για Ραντεβού </u></string>
+    <string name="text_fusuiouerapeuthrio"> <u>Φυσιοθεραπευτήριο:</u></string>
+    <string name="text_epilogh">Επιλογή Φυσιοθεραπευτηρίου</string>
+    <string name="text_epilogh2">Επιλογή Υπηρεσίας</string>
+    <string name="text_neoaithma">Νέο Αίτημα</string>
+    <string name="text_oikonomikh">Οικονομική Κατάσταση</string>
+    <string name="hmnia">01 ΙΑΝ 2023</string>
+    <string name="epilogh_wras">Επιλέξτε Ώρα</string>
 </resources>

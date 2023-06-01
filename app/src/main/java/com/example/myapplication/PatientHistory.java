@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,25 +29,29 @@ public class PatientHistory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_history);
         ListView listView = findViewById(R.id.historyListView);
+        TextView name = (TextView) findViewById(R.id.patientName);
+        Intent intent = getIntent();
+        OkHttpHandler requestHandler = new OkHttpHandler();
 
-        JSONObject json = new JSONObject(jsonData);
+        String patient = intent.getStringExtra("patientName");
+        name.setText(patient);
+        String jsonData = requestHandler.fetchPatientHistory(patient);
+        JSONObject json = null;
+        try {
+            json = new JSONObject(jsonData);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
         ArrayList<HistoryItem> itemList = new ArrayList<>();
-
         for (int i = 0; i < json.length(); i++) {
             JSONObject jsonItem = null;
             try {
-                jsonItem = json.getJSONObject("HistoryId");
-            } catch (JSONException e) {
-                throw new RuntimeException(e);
-            }
-
-            try{
+                jsonItem = json.getJSONObject("appointmentId");
                 date = jsonItem.getString("date");
                 serviceType = jsonItem.getString("serviceType");
                 price = jsonItem.getString("price");
-            }
-            catch(JSONException e){
-                e.printStackTrace();
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
             }
 
             HistoryItem item = new HistoryItem(date, serviceType, price);

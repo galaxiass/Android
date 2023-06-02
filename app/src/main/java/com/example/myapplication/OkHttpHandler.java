@@ -21,8 +21,13 @@ public class OkHttpHandler {
 
     public String fetchPatientHistory(String patient){
         url = "http://192.168.2.2/physiodate/getHistory.php?patient=" + patient;
-        String data;
+        String historyData = this.makeRequest(url);;
 
+        return historyData;
+    }
+
+    private String makeRequest(String url){
+        String data;
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
         Request request = new Request.Builder().url(url).method("POST", body).build();
@@ -33,6 +38,7 @@ public class OkHttpHandler {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         return data;
     }
 

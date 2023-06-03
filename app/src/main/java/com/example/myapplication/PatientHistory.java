@@ -46,7 +46,7 @@ public class PatientHistory extends AppCompatActivity {
         for (int i = 0; i < json.length(); i++) {
             JSONObject jsonItem = null;
             try {
-                jsonItem = json.getJSONObject("appointmentId");
+                jsonItem = json.getJSONObject("appointmentId" + i);
                 date = jsonItem.getString("date");
                 serviceType = jsonItem.getString("serviceType");
                 price = jsonItem.getString("price");

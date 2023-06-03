@@ -17,7 +17,7 @@ import android.widget.TimePicker;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class neo_aithma extends AppCompatActivity {
+public class NewAppointment extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
     private Button timeButton;

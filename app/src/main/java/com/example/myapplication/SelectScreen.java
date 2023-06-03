@@ -4,13 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.QuickContactBadge;
 
-public class select_screen extends AppCompatActivity {
+public class SelectScreen extends AppCompatActivity {
 
     Button neo_aithma;
 
@@ -43,7 +40,7 @@ public class select_screen extends AppCompatActivity {
         neo_aithma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =  new Intent(select_screen.this, neo_aithma.class);
+                Intent intent =  new Intent(SelectScreen.this, NewAppointment.class);
                 startActivity(intent);
             }
         });

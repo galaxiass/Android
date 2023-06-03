@@ -9,12 +9,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class NewAppointment extends AppCompatActivity {
@@ -22,19 +28,39 @@ public class NewAppointment extends AppCompatActivity {
     private Button dateButton;
     private Button timeButton;
 
+    private final String myIP = "195.251.210.162";  //change ip
     private Button OKbutton;
+
+    private ClinicList cl;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        cl =  new ClinicList(myIP);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.neo_aithma);
 
         //back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Spinner dropDown = (Spinner) findViewById(R.id.fusiotherapeuthrio_spinner);
-        //make spinner work
-        Spinner dropDown2 = (Spinner) findViewById(R.id.yphresia_spinner);
-        //make spinner work
+        //clinic spinner
+        Spinner clinicdropDown = (Spinner) findViewById(R.id.fusiotherapeuthrio_spinner);
+        ArrayAdapter<String> clinicarrayAdapter =
+                new ArrayAdapter<String>(this,
+                        android.R.layout.simple_spinner_dropdown_item,
+                        cl.getAllClinics());
+        clinicdropDown.setAdapter(clinicarrayAdapter);
+
+        //service spinner
+        Spinner servicedropDown = (Spinner) findViewById(R.id.yphresia_spinner);
+        ArrayAdapter<String> servicearrayAdapter =
+                new ArrayAdapter<String>(this,
+                        android.R.layout.simple_spinner_dropdown_item,
+                        cl.getService());
+        clinicdropDown.setAdapter(servicearrayAdapter);
+
+
 
         //date picker
         initDatePicker();
@@ -51,13 +77,18 @@ public class NewAppointment extends AppCompatActivity {
         OKbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ////////code
+                String url= "http://"+myIP+"/carsDBServices/logHistory.php?brand=" + clinic + "&model=" + rb.getText().toString() + "&timestamp=" + new Date(System.currentTimeMillis()).toString();
+                try {
+                    OkHttpHandler okHttpHandler = new OkHttpHandler();
+                    okHttpHandler.logAppt(url);
+                    Toast.makeText(getApplicationContext(), "Selection Logged", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
     }
-
-
 
     //making back button work
     public boolean  onOptionsItemSelected(MenuItem item){
@@ -159,4 +190,12 @@ public class NewAppointment extends AppCompatActivity {
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
     }
+
+
+ /*   public void PickCarOnClick(View v) {
+        Spinner dropDown = (Spinner) findViewById(R.id.fusiotherapeuthrio_spinner);
+        String clinic = String.valueOf(dropDown.getSelectedItem());
+        List<String> allService = cl.getService(clinic);
+
+        */ //poio einai swsto
 }

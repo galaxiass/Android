@@ -9,7 +9,7 @@ public class ClinicList {
     ArrayList<Clinic> sList = new ArrayList<>();
 
     public ClinicList(String ip) {
-        String url = "http://" + ip + "/physiodate/your_php_file.php";
+        String url = "http://" + ip + "/physiodate/getclinic.php";
 
         try {
             OkHttpHandler okHttpHandler = new OkHttpHandler();

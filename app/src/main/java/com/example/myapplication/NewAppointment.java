@@ -78,6 +78,7 @@ public class NewAppointment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String url= "http://"+myIP+"/carsDBServices/logHistory.php?brand=" + clinic + "&model=" + rb.getText().toString() + "&timestamp=" + new Date(System.currentTimeMillis()).toString();
+                //idk pws prepei na ginei
                 try {
                     OkHttpHandler okHttpHandler = new OkHttpHandler();
                     okHttpHandler.logAppt(url);

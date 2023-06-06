@@ -30,17 +30,20 @@ public class PatientHistory extends AppCompatActivity {
         setContentView(R.layout.activity_patient_history);
         ListView listView = findViewById(R.id.historyListView);
         TextView name = (TextView) findViewById(R.id.patientName);
+        TextView noData = (TextView) findViewById(R.id.noDataText);
         Intent intent = getIntent();
         OkHttpHandler requestHandler = new OkHttpHandler();
 
         String patient = intent.getStringExtra("patientName");
         name.setText(patient);
+        noData.setVisibility(TextView.GONE);
         String jsonData = requestHandler.fetchPatientHistory(patient);
         JSONObject json = null;
         try {
             json = new JSONObject(jsonData);
         } catch (JSONException e) {
-            throw new RuntimeException(e);
+            noData.setVisibility(TextView.VISIBLE);
+            return;
         }
         ArrayList<HistoryItem> itemList = new ArrayList<>();
         for (int i = 0; i < json.length(); i++) {

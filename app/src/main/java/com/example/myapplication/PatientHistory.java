@@ -1,13 +1,16 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
+
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -28,10 +31,12 @@ public class PatientHistory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_history);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ListView listView = findViewById(R.id.historyListView);
         TextView name = (TextView) findViewById(R.id.patientName);
         TextView noData = (TextView) findViewById(R.id.noDataText);
         Intent intent = getIntent();
+
         OkHttpHandler requestHandler = new OkHttpHandler();
 
         String patient = intent.getStringExtra("patientName");
@@ -62,6 +67,16 @@ public class PatientHistory extends AppCompatActivity {
         }
         CustomAdapter adapter = new CustomAdapter(this, itemList);
         listView.setAdapter(adapter);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
 

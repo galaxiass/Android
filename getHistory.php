@@ -10,7 +10,7 @@
     $dbh = mysqli_connect($host,$uname,$pass) or die("cannot connect");
 	mysqli_select_db($dbh, $dbname);
 
-    $sql = "SELECT s.name AS service_name, s.price, a.date
+    $sql = "SELECT s.name AS serviceType, s.price, a.date
 	FROM appointment a
 	JOIN patient p ON a.patient_amka = p.amka
 	JOIN services s ON a.service_id = s.id

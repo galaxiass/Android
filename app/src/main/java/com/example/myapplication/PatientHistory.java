@@ -39,7 +39,7 @@ public class PatientHistory extends AppCompatActivity {
 
         OkHttpHandler requestHandler = new OkHttpHandler();
 
-        String patient = intent.getStringExtra("patientName");
+        String patient =intent.getStringExtra("patientName");
         name.setText(patient);
         noData.setVisibility(TextView.GONE);
         String jsonData = requestHandler.fetchPatientHistory(patient);
@@ -83,7 +83,7 @@ public class PatientHistory extends AppCompatActivity {
 class CustomAdapter extends ArrayAdapter<HistoryItem> {
 
     public CustomAdapter(Context context, ArrayList<HistoryItem> items) {
-        super(context, 0);
+        super(context, 0, items);
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

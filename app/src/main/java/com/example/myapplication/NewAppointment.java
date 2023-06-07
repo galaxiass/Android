@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -181,7 +184,7 @@ public class NewAppointment extends AppCompatActivity {
         };
 
         int style = AlertDialog.BUTTON_NEGATIVE;
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this, style, onTimeSetListener, hour, minute, true);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, style, onTimeSetListener, hour, minute, false);
 
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
@@ -203,10 +206,27 @@ public class NewAppointment extends AppCompatActivity {
         Spinner servicedropDown = (Spinner) findViewById(R.id.yphresia_spinner);
         String service = String.valueOf(servicedropDown.getSelectedItem());
 
+        dateButton = findViewById(R.id.datepickerbutton);
         String date = getTodaysDate();
 
+        timeButton = findViewById(R.id.timepickerButton);
         String chosen_time = getTime();
 
+        Boolean CheckAllFields = false;
+
+
+
+        if (clinic.isEmpty() ) setSpinnerError(clinicdropDown, "field can't be empty");
+        else if (service.isEmpty() ) setSpinnerError(servicedropDown, "field can't be empty");
+        //else if (date.isEmpty()  ) setSpinnerError(dateButton, "field can't be empty");
+        //else if (chosen_time.isEmpty()) setSpinnerError(timeButton, "field can't be empty");
+        else CheckAllFields = true;
+
+
+        if (CheckAllFields) {
+            Intent i = new Intent(NewAppointment.this, SelectScreen.class);
+            startActivity(i);
+        }
 
         OKbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -221,5 +241,17 @@ public class NewAppointment extends AppCompatActivity {
                 }
             }
         });
+    }
+    private void setSpinnerError(Spinner spinner, String error){
+        View selectedView = spinner.getSelectedView();
+        if (selectedView != null && selectedView instanceof TextView) {
+            spinner.requestFocus();
+            TextView selectedTextView = (TextView) selectedView;
+            selectedTextView.setError("error"); // any name of the error will do
+            selectedTextView.setTextColor(Color.RED); //text color in which you want your error message to be displayed
+            selectedTextView.setText(error); // actual error message
+            spinner.performClick(); // to open the spinner list if error is found.
+
+        }
     }
 }

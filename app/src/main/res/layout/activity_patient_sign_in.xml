@@ -7,36 +7,37 @@
     android:background="#e0faf8"
     tools:context=".Patient">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="100dp"
-        android:text="Είσοδος Χρήστη"
-        android:textAlignment="center"
-        android:textColor="#00C7AA"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/signUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:contextClickable="true"
-        android:text="Δημιουργία Λογαριασμού"
-        android:textColor="#00AFEB"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#00AFEB"
+        android:backgroundTintMode="add"
+        android:text="Δημιουργία Λογαρισαμού"
+        android:textColor="#e0faf8"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-        app:layout_constraintVertical_bias="0.36" />
+         />
+
+    <TextView
+        android:id="@+id/titleSignIn"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="100dp"
+        android:text="Είσοδος Ασθενή"
+        android:textAlignment="center"
+        android:textColor="#00C7AA"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/nameSignIn"
+        app:layout_constraintStart_toStartOf="@+id/nameSignIn"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/nameSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -44,12 +45,12 @@
         android:text="Όνομα"
         android:textColor="#6B8993"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/passwordSignIn"
+        app:layout_constraintStart_toStartOf="@+id/passwordSignIn"
         tools:layout_editor_absoluteY="219dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/passwordSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -57,21 +58,24 @@
         android:text="Κωδικός"
         android:textColor="#6B8993"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/signInButton"
+        app:layout_constraintStart_toStartOf="@+id/signInButton"
         tools:layout_editor_absoluteY="325dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/signInButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="248dp"
         android:backgroundTint="#00AFEB"
         android:backgroundTintMode="add"
         android:text="OK"
         android:textColor="#e0faf8"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintEnd_toEndOf="@+id/signUpButton"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/signUpButton"
+         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

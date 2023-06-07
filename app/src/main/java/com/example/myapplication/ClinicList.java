@@ -6,7 +6,6 @@ import java.util.List;
 public class ClinicList {
 
     ArrayList<Clinic> cList = new ArrayList<>();
-    ArrayList<Clinic> sList = new ArrayList<>();
 
     public ClinicList(String ip) {
         String url = "http://" + ip + "/physiodate/getclinic.php";
@@ -29,9 +28,9 @@ public class ClinicList {
 
     public List<String> getService(String b) {
         List<String> temp = new ArrayList<String>();
-        for (int i=0; i<sList.size(); i++) {
-            if (sList.get(i).hasName(b)) {
-                temp = sList.get(i).getService();
+        for (int i=0; i<cList.size(); i++) {
+            if (cList.get(i).hasName(b)) {
+                temp = cList.get(i).getService();
             }
         }
         return temp;

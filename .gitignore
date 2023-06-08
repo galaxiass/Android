@@ -46,3 +46,4 @@ output.json
 obj/
 .externalNativeBuild
 .idea/render.experimental.xml
+.idea/assetWizardSettings.xml

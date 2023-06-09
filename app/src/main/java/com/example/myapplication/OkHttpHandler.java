@@ -20,7 +20,7 @@ public class OkHttpHandler {
     }
 
 
-    ArrayList<Patient> populatePatients(String url) throws Exception {
+    ArrayList<Patient> checkPatients(String url) throws Exception {
         ArrayList<Patient> patList = new ArrayList<>();
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
@@ -32,11 +32,9 @@ public class OkHttpHandler {
             JSONObject json = new JSONObject(data);
             Iterator<String> keys = json.keys();
             while(keys.hasNext()) {
-                String amka = keys.next();
-                String name = json.getJSONObject(amka).getString("name").toString();
-                String address = json.getJSONObject(amka).getString("address").toString();
-                String password = json.getJSONObject(amka).getString("password").toString();
-                patList.add(new Patient(name, amka, address,password));
+                String name = keys.next();
+                String password = json.getJSONObject(name).getString("name").toString();
+                patList.add(new Patient(name, password));
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -45,7 +43,7 @@ public class OkHttpHandler {
         return patList;
     }
 
-    public void getMedia(String url) throws Exception {
+    public void logHistory(String url) throws Exception {
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
         Request request = new Request.Builder().url(url).method("POST", body).build();

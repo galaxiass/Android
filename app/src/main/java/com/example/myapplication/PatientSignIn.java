@@ -35,6 +35,13 @@ public class PatientSignIn extends AppCompatActivity {
 
 
                 String url= "http://"+myIP+"/physiodate/getMedia.php?name=" + nameSignIn.getText() + "&password=" + passwordsignIn.getText();
+                try {
+                    OkHttpHandler okHttpHandler = new OkHttpHandler();
+                    okHttpHandler.checkPatients(url);
+                    Toast.makeText(getApplicationContext(), "Selection Logged", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 Patient patient = patientList.findPatientByName(name);
                 if (patient != null && patient.getPassword().equals(password)) {
                     Toast.makeText(PatientSignIn.this, "Sign In Successful", Toast.LENGTH_SHORT).show();

@@ -16,9 +16,12 @@
         android:text="Διεύθυνση"
         android:textColor="#6B8993"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/passwordSignUp"
-        app:layout_constraintStart_toStartOf="@+id/passwordSignUp"
-        tools:layout_editor_absoluteY="299dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameSignUp"
+        app:layout_constraintVertical_bias="0.109" />
 
     <EditText
         android:id="@+id/amkaSignUp"
@@ -29,9 +32,12 @@
         android:text="ΑΜΚΑ"
         android:textColor="#6B8993"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/okButton"
-        app:layout_constraintStart_toStartOf="@+id/okButton"
-        tools:layout_editor_absoluteY="496dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordSignUp"
+        app:layout_constraintVertical_bias="0.23" />
 
     <TextView
         android:id="@+id/titleSignUp"
@@ -41,9 +47,12 @@
         android:textAlignment="center"
         android:textColor="#00C7AA"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/nameSignUp"
-        app:layout_constraintStart_toStartOf="@+id/nameSignUp"
-        tools:layout_editor_absoluteY="80dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127" />
 
     <EditText
         android:id="@+id/nameSignUp"
@@ -54,9 +63,12 @@
         android:text="Όνομα"
         android:textColor="#6B8993"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/addressSignUp"
-        app:layout_constraintStart_toStartOf="@+id/addressSignUp"
-        tools:layout_editor_absoluteY="204dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleSignUp"
+        app:layout_constraintVertical_bias="0.127" />
 
     <EditText
         android:id="@+id/passwordSignUp"
@@ -67,10 +79,12 @@
         android:text="Κωδικός"
         android:textColor="#6B8993"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/amkaSignUp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/amkaSignUp"
-        tools:layout_editor_absoluteY="407dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressSignUp"
+        app:layout_constraintVertical_bias="0.161" />
 
     <Button
         android:id="@+id/okButton"
@@ -81,6 +95,8 @@
         android:text="OK"
         android:textColor="#e0faf8"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="626dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amkaSignUp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

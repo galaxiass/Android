@@ -19,7 +19,10 @@ public class Patient {
             this.password = password;
         }
 
-        // Getter and Setter methods for the attributes
+    public Patient(String name, String amka) {
+    }
+
+    // Getter and Setter methods for the attributes
         public String getName() {
             return name;
         }

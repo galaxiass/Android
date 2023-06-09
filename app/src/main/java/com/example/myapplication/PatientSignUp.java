@@ -49,10 +49,10 @@ public class PatientSignUp extends AppCompatActivity {
                     patientList.addPatient(newPatient);
 
                     // Store the patient account information in the database
-                    String url= "http://"+myIP+"/physiodate/getMedia.php?name=" + nameSignUp.getText() + "&address=" + addressSignUp.getText() + "&password=" + passwordSignUp+"&amka" + amkaSignUp;
+                    String url= "http://"+myIP+"/physiodate/logHistory.php?name=" + nameSignUp.getText() + "&address=" + addressSignUp.getText() + "&password=" + passwordSignUp+"&amka" + amkaSignUp;
                     try {
                         OkHttpHandler okHttpHandler = new OkHttpHandler();
-                        okHttpHandler.getMedia(url);
+                        okHttpHandler.logHistory(url);
                         Toast.makeText(getApplicationContext(), "Selection Logged", Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         e.printStackTrace();

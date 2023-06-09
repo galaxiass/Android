@@ -10,6 +10,16 @@ public class PatientList {
         patients = new ArrayList<>();
     }
 
+    public PatientList(String ip) {
+        String url= "http://"+ip+"/physiodate/logHistory.php";
+
+        try {
+            OkHttpHandler okHttpHandler = new OkHttpHandler();
+            patients = okHttpHandler.checkPatients(url);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public void addPatient(Patient patient) {
         patients.add(patient);
     }

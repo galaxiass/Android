@@ -19,7 +19,7 @@ public class okHTTPHandler {
         StrictMode.setThreadPolicy(policy);
     }
 
-    public void deleteAppointment(String patient){
+    public void deleteAppointment(){
         url = "http://192.168.56.1/physiodate/appointmentNotComp.php";
         this.makeRequest(url);;
 

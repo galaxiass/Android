@@ -1,11 +1,13 @@
 package com.example.myapplication;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.view.MenuItem;
 
 public class activity_confirm extends AppCompatActivity {
 
@@ -19,6 +21,23 @@ public class activity_confirm extends AppCompatActivity {
 
         // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        //When the button 'CANCELLED' is pressed a method is called
+        //to delete the appointment in question from the DB
+        Button buttonUNCMPL = (Button) findViewById(R.id.buttonUncompleted);
+        buttonUNCMPL.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                okHTTPHandler handler = new okHTTPHandler();
+                handler.deleteAppointment();
+            }
+        });
+
+        Button buttonCMPL = (Button) findViewById(R.id.buttonCompleted);
+        buttonCMPL.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     // this event will enable the back

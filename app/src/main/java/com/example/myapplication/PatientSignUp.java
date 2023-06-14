@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +22,7 @@ public class PatientSignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_sign_up);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         patientList = new PatientList();
         EditText nameSignUp=findViewById(R.id.nameSignUp);
         EditText passwordSignUp=findViewById(R.id.passwordSignUp);
@@ -66,7 +69,24 @@ public class PatientSignUp extends AppCompatActivity {
                     startActivity(intent);
                     finish(); //  to prevent going back to it
                 }
+
+
             }
+
         });
+
+
     }
+    public boolean  onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;}
 }

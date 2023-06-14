@@ -29,12 +29,16 @@ public class activity_confirm extends AppCompatActivity {
             public void onClick(View v) {
                 okHTTPHandler handler = new okHTTPHandler();
                 handler.deleteAppointment();
+                finish();
             }
         });
 
+        //When the button 'COMPLETED' is pressed the user
+        //returns to the previous screen
         Button buttonCMPL = (Button) findViewById(R.id.buttonCompleted);
         buttonCMPL.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
                 finish();
             }
         });

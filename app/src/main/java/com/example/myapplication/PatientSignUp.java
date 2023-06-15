@@ -52,7 +52,8 @@ public class PatientSignUp extends AppCompatActivity {
                     patientList.addPatient(newPatient);
 
                     // Store the patient account information in the database
-                    String url= "http://"+myIP+"/physiodate/logHistory.php?name=" + nameSignUp.getText() + "&address=" + addressSignUp.getText() + "&password=" + passwordSignUp+"&amka" + amkaSignUp;
+                    String url= "http://"+myIP+"/physiodate/logHistory.php?name=" + name + "&address=" + address + "&password=" + password+"&amka=" + amka;
+                    System.out.println(url);
                     try {
                         OkHttpHandler okHttpHandler = new OkHttpHandler();
                         okHttpHandler.logHistory(url);

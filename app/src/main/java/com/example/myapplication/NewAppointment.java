@@ -233,7 +233,7 @@ public class NewAppointment extends AppCompatActivity {
             public void onClick(View v) {
                 String url = "http://" + myIP + "/physiodate/logAppt.php?clinic=" + clinic + "&service=" + service + "&date=" + date + "&time" + chosen_time;
                 try {
-                    okHTTPHandler okHttpHandler = new com.example.r9.okHttpHandler();
+                    okHTTPHandler okHttpHandler = new com.example.okHttpHandler();
                     okHttpHandler.logAppt(url);
                     Toast.makeText(getApplicationContext(), "Selection Logged", Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {

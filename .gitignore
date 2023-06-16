@@ -45,3 +45,5 @@ output.json
 #NDK
 obj/
 .externalNativeBuild
+.idea/render.experimental.xml
+.idea/assetWizardSettings.xml

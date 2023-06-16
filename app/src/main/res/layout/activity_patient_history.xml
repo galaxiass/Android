@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
+    android:parentActivityName=".Patient"
     tools:context=".PatientHistory">
 
     <TextView
         android:id="@+id/patientHistoryTitle"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:text="Ιστορικό Ασθενή"
         android:textAlignment="center"
-        android:textColor="@color/textColor"
+        android:textColor="@color/finalTextColor"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Patient Name"
-        android:textColor="#00AFEB"
+        android:textColor="@color/finalFinalTextColor"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,4 +41,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/patientName" />
+
+    <TextView
+        android:id="@+id/noDataText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Δεν υπάρχουν δεδομένα για τον ασθενή"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/historyListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

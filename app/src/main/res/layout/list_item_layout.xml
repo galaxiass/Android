@@ -8,18 +8,21 @@
         android:id="@+id/dateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/finalTextColor"
         android:textSize="16sp" />
 
     <TextView
         android:id="@+id/serviceTypeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/finalTextColor"
         android:textSize="16sp" />
 
     <TextView
         android:id="@+id/priceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/finalTextColor"
         android:textSize="16sp" />
 
 </LinearLayout>

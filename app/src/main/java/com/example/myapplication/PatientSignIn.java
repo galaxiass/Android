@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.namespace.R;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,8 +41,8 @@ public class PatientSignIn extends AppCompatActivity {
 
                 String url= "http://"+myIP+"/physiodate/getMedia.php?name=" + nameSignIn.getText() + "&password=" + passwordsignIn.getText();
                 try {
-                    OkHttpHandler okHttpHandler = new OkHttpHandler();
-                    okHttpHandler.checkPatients(url);
+                    okHTTPHandler OkHttpHandler = new okHTTPHandler();
+                    OkHttpHandler.checkPatients(url);
                     Toast.makeText(getApplicationContext(), "Selection Logged", Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -51,7 +53,7 @@ public class PatientSignIn extends AppCompatActivity {
                 } else {
                     Toast.makeText(PatientSignIn.this, "Invalid name or password", Toast.LENGTH_SHORT).show();
                 }
-                }
+            }
         });
 
 

@@ -4,29 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Patient extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient);
-    }
-
+public class Patient {
 
         private String name;
-        private int amka;
+        private String amka;
         private String address;
         private String password;
 
         // Constructor
-        public Patient(String name, int amka, String address, String password) {
+        public Patient(String name, String amka, String address, String password) {
             this.name = name;
             this.amka = amka;
             this.address = address;
             this.password = password;
         }
 
-        // Getter and Setter methods for the attributes
+    public Patient(String name, String amka) {
+    }
+
+    // Getter and Setter methods for the attributes
         public String getName() {
             return name;
         }
@@ -35,11 +31,11 @@ public class Patient extends AppCompatActivity {
             this.name = name;
         }
 
-        public int getAmka() {
+        public String getAmka() {
             return amka;
         }
 
-        public void setAmka(int amka) {
+        public void setAmka(String amka) {
             this.amka = amka;
         }
 

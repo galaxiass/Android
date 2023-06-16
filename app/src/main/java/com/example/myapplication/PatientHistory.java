@@ -37,7 +37,7 @@ public class PatientHistory extends AppCompatActivity {
         TextView noData = (TextView) findViewById(R.id.noDataText);
         Intent intent = getIntent();
 
-        OkHttpHandler requestHandler = new OkHttpHandler();
+        okHTTPHandler requestHandler = new okHTTPHandler();
 
         String patient =intent.getStringExtra("patientName");
         name.setText(patient);

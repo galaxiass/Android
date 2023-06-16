@@ -24,8 +24,14 @@ public class okHTTPHandler {
         this.makeRequest(url);;
 
     }
+    public String fetchPatientHistory(String patient){
+        url = "http://192.168.2.2/physiodate/getHistory.php?patient=" + patient;
+        String historyData = this.makeRequest(url);
 
-    private void makeRequest(String url){
+        return historyData;
+    }
+
+    private String makeRequest(String url){
         String data;
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
@@ -33,9 +39,11 @@ public class okHTTPHandler {
         Response response = null;
         try {
             response = client.newCall(request).execute();
+            data = response.body().string();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return data;
     }
 
 }

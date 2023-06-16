@@ -29,24 +29,56 @@
         android:id="@+id/titleSignIn"
         android:layout_width="250dp"
         android:layout_height="40dp"
+<<<<<<< HEAD:app/src/main/res/layout/activity_patient_sign_in.xml
         android:text="Είσοδος Ασθενή"
+=======
+        android:layout_marginTop="100dp"
+        android:text="Είσοδος Χρήστη"
+        android:fontFamily="@font/comfortaa"
+>>>>>>> 4c-r9:app/src/main/res/layout/activity_patient.xml
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="30sp"
+<<<<<<< HEAD:app/src/main/res/layout/activity_patient_sign_in.xml
+=======
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:contextClickable="true"
+        android:text="Δημιουργία Λογαριασμού"
+        android:fontFamily="@font/comfortaa"
+        android:textColor="#00AFEB"
+        android:textSize="20sp"
+>>>>>>> 4c-r9:app/src/main/res/layout/activity_patient.xml
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD:app/src/main/res/layout/activity_patient_sign_in.xml
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.133" />
 
     <EditText
         android:id="@+id/nameSignIn"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/fusiotherapeuthrio"
+        app:layout_constraintVertical_bias="0.36" />
+
+    <EditText
+        android:id="@+id/screen_title"
+>>>>>>> 4c-r9:app/src/main/res/layout/activity_patient.xml
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Όνομα"
+        android:fontFamily="@font/comfortaa"
         android:textColor="#6B8993"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,12 +89,17 @@
         app:layout_constraintVertical_bias="0.335" />
 
     <EditText
+<<<<<<< HEAD:app/src/main/res/layout/activity_patient_sign_in.xml
         android:id="@+id/passwordSignIn"
+=======
+        android:id="@+id/fusiotherapeuthrio"
+>>>>>>> 4c-r9:app/src/main/res/layout/activity_patient.xml
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Κωδικός"
+        android:fontFamily="@font/comfortaa"
         android:textColor="#6B8993"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,6 +116,7 @@
         android:backgroundTint="#00AFEB"
         android:backgroundTintMode="add"
         android:text="OK"
+        android:fontFamily="@font/comfortaa"
         android:textColor="#e0faf8"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

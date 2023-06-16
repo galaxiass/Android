@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e0faf8"
+    android:background="@color/background_color"
     tools:context=".Patient">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_marginTop="100dp"
         android:text="Είσοδος Χρήστη"
         android:textAlignment="center"
-        android:textColor="#00C7AA"
+        android:textColor="@color/textColor"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

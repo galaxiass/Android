@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import com.example.myapplication.package.R;
 import androidx.appcompat.app.*;
 
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.view.*;
 import android.widget.*;
 import com.squareup.picasso.*;
 import java.util.*;
+
 
 public class MainActivity extends AppCompatActivity {
 

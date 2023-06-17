@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.example.namespace.R;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,8 +56,8 @@ public class PatientSignUp extends AppCompatActivity {
                     String url= "http://"+myIP+"/physiodate/logHistory.php?name=" + name + "&address=" + address + "&password=" + password+"&amka=" + amka;
                     System.out.println(url);
                     try {
-                        OkHttpHandler okHttpHandler = new OkHttpHandler();
-                        okHttpHandler.logHistory(url);
+                        okHTTPHandler OkHttpHandler = new okHTTPHandler();
+                        OkHttpHandler.checkPatients(url);
                         Toast.makeText(getApplicationContext(), "Selection Logged", Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         e.printStackTrace();

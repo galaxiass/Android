@@ -14,8 +14,8 @@ public class PatientList {
         String url= "http://"+ip+"/physiodate/logHistory.php";
 
         try {
-            OkHttpHandler okHttpHandler = new OkHttpHandler();
-            patients = okHttpHandler.checkPatients(url);
+            okHTTPHandler OkHttpHandler = new okHTTPHandler();
+            patients = OkHttpHandler.checkPatients(url);
         } catch (Exception e) {
             e.printStackTrace();
         }

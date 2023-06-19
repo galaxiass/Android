@@ -51,7 +51,7 @@ public class okHTTPHandler {
         return data;
     }
 
-    ArrayList<Clinic> populateDropDown(String url) throws Exception {
+    static ArrayList<Clinic> populateDropDown(String url) throws Exception {
         ArrayList<Clinic> cList = new ArrayList<>();
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));

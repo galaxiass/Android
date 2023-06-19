@@ -11,8 +11,8 @@ public class ClinicList {
         String url = "http://" + ip + "/physiodate/getclinic.php";
 
         try {
-            OkHttpHandler okHttpHandler = new OkHttpHandler();
-            cList = okHttpHandler.populateDropDown(url);
+            okHTTPHandler okHttpHandler = new okHTTPHandler();
+            cList = okHTTPHandler.populateDropDown(url);
         } catch (Exception e) {
             e.printStackTrace();
         }

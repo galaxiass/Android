@@ -1,6 +1,6 @@
 package com.example.myapplication;
 
-import com.example.myapplication.package.R;
+import com.example.namespace.R;
 import androidx.appcompat.app.*;
 
 import android.content.Intent;

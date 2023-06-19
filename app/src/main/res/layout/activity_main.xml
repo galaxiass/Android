@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".MainActivity">
+    tools:context="com.example.myapplication.MainActivity">
 
     <ImageView
         android:id="@+id/imageView5"
@@ -37,7 +37,7 @@
         android:layout_marginBottom="12dp"
         android:backgroundTint="@color/finalFinalTextColor"
         android:text="πανελληνιοσ συλλογος φυσιοθεραπευτων"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintBottom_toTopOf="@+id/patientButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/patientButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="200dp"

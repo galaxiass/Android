@@ -20,24 +20,33 @@
             android:name="com.google.android.actions"
             android:resource="@xml/network_security_config" />
         <activity
-            android:name=".PatientHistory"
+            android:name="com.example.myapplication.PatientHistory"
             android:exported="false" />
         <activity
-            android:name=".PatientSignIn"
+            android:name="com.example.myapplication.NewAppointment"
             android:exported="false" />
         <activity
-            android:name=".PatientSignUp"
+            android:name="com.example.myapplication.SelectScreen"
+            android:exported="false" />
+        <activity
+            android:name="com.example.myapplication.AddServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.myapplication.activity_confirm"
+            android:exported="false" />
+        <activity
+            android:name="com.example.myapplication.PatientSignIn"
+            android:exported="false" />
+        <activity
+            android:name="com.example.myapplication.PatientSignUp"
+            android:exported="false" />
+        <activity
+            android:name="com.example.myapplication.FinancialMovementsActivity"
             android:exported="false" />
 
-        <meta-data
-            android:name="com.google.android.actions"
-            android:resource="@xml/network_security_config" />
 
         <activity
-            android:name=".Patient"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name="com.example.myapplication.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,6 +54,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+
     </application>
 
 </manifest>

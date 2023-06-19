@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.namespace'
+    namespace 'com.example.myapplication'
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "codewithcal.au.calendarappexample"
+        applicationId "com.example.myapplication"
         minSdkVersion 26
         targetSdkVersion 33
         versionCode 1

@@ -97,9 +97,9 @@ class CustomAdapter extends ArrayAdapter<HistoryItem> {
         TextView serviceTypeTextView = convertView.findViewById(R.id.serviceTypeTextView);
         TextView priceTextView = convertView.findViewById(R.id.priceTextView);
 
-        dateTextView.setText("Date: " + item.getDate());
-        serviceTypeTextView.setText("Service Type: " + item.getServiceType());
-        priceTextView.setText("Price: " + item.getPrice());
+        dateTextView.setText("Ημερομηνία: " + item.getDate());
+        serviceTypeTextView.setText("Υπηρεσία: " + item.getServiceType());
+        priceTextView.setText("Τιμή: " + item.getPrice() + " €");
 
         return convertView;
     }

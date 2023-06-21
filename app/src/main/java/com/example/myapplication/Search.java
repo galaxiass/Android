@@ -13,8 +13,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private List<Item> itemList;
-    private ItemAdapter itemAdapter;
+    private List<Patient> patientList;
+    private PatientAdapter patientAdapter;
     private SearchView searchView;
 
     @Override
@@ -39,7 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView = setLayoutManager(new LinearLayoutManager(this));
-        itemList = new ArrayList<>();
+        patientListList = new ArrayList<>();
+
+        patientList.add(new Patient("Δημοσθένης Καραμήτρου"));
+        patientList.add(new Patient("Ασθενής2"));
+        patientList.add(new Patient("Ασθενής3"));
+        patientList.add(new Patient("Ασθενής4"));
     }
 
     private void filterList(String text) {
